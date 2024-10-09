@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <!-- icon-link -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"
+    ></script>
+      <!-- slider link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- end  -->
+
+    <!-- tailwind cdn  -->
+      <script src="https://cdn.tailwindcss.com"></script>
+       <!-- root link  -->
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+            lightBlue:"#222448",
+            lightDarkBlue:"#151940",
+            blue:"#12123A",
+            skyBlue:"#62C9CC",
+            grey:"#B8B9C5",
+            darkBlue:"#111131",
+            },
+            fontFamily: {
+            
+            },
+            },
+          },
+        }
+    </script>
+    <style>
+      .slick-dots li button:before{
+        content: unset;
+      }
+      .slick-dots li{
+         max-width: 20px;
+        height: 6px;
+        background: white;
+        border-radius: 30px;
+        top: 18px;
+        position: relative;
+      }
+      .slick-dots li.slick-active{
+         max-width: 20px;
+        height: 6px;
+        background: #62C9CC;
+        border-radius: 30px;
+      }
+    </style>
+</head>
+<body>
+    <section>
+          <nav class="w-full flex items-center justify-between bg-lightDarkBlue px-7 min-h-20 border border-lightBlue">
+            <div class="flex items-center gap-40">
+          <div class="font-medium text-3xl text-white">
+            anterata
+          </div>
+            <form  class="bg-lightBlue pt-2 pb-3.5 pl-6 flex items-center justify-between rounded-full cursor-pointer max-xl:hidden">
+            <label for="">
+            <input type="text" placeholder="Search for Assets" class="text-sm font-normal outline-0 text-white bg-lightBlue ">
+            </label>
+            <div class=" pr-4" >
+            <img src="./assets/image/svg/search bar.svg" alt="">
+            </div>
+        </div>
+          </form>
+          <ul
+            id="mobile_navbar"
+            class="flex gap-2.5 items-center xl:relative fixed max-xl:w-full max-xl:h-full max-xl:bg-orange z-10 max-xl:translate-x-full left-0 top-0 max-xl:flex-col max-xl:justify-center max-xl:items-center transition ease-out duration-250 max-xl:bg-blue max-xl:min-h-screen"
+          >
+            <li>
+              <a href="#">
+                <img src="./assets/image/svg/bell svg.svg" alt="">
+              </a>
+            </li>
+            <li>
+             <div class="flex items-center bg-lightBlue rounded-full py-1 pl-1.5 pr-3.5 cursor-pointer">
+                <img src="./assets/image/girl nav img.png" alt="">
+                <span class="text-white pl-2">Jhon Doe</span>
+                <img class="pl-6" src="./assets/image/svg/down arrow.svg" alt="">
+             </div>
+            </li>
+              <form  class="bg-lightBlue pt-2 pb-3.5 pl-6 flex items-center justify-between rounded-full my-3.5 cursor-pointer xl:hidden">
+            <label id="ww">
+            <input type="text" placeholder="Search for Assets" class="text-sm font-normal outline-0 text-white bg-lightBlue ">
+            </label>
+            <div class=" pr-4" id="ww">
+            <img src="./assets/image/svg/search bar.svg" alt="">
+            </div>
+          </form>
+          </ul>
+          <div class="relative z-20 flex gap-x-4 xl:hidden">
+            <div class="relative size-8 rounded-[100px] text-white" id="toggle_button">
+              <div
+                class="absolute h-full w-full transition-all duration-300 show_nav font-bold text-[30px]"
+              >
+                <ion-icon name="menu-outline"></ion-icon>
+              </div>
+              <div
+                class="absolute h-full w-full font-bold text-[30px] transition-all duration-300 close_nav opacity-0"
+              >
+                <ion-icon name="close-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="flex bg-blue ">
+        <div class=" bg-lightDarkBlue border border-lightBlue h-[800px] w-72 pt-3.5 ">
+            <div class=" flex items center gap-3 py-3.5 hover:bg-skyBlue max-w-60 mb-2 ms-7 px-4 rounded-sm group ">
+                <img src="./assets/image/svg/time line.svg" alt="">
+                <span class="text-grey group-hover:text-white">Timeline</span>
+            </div>
+             <div class=" flex items center gap-3 py-3.5 hover:bg-skyBlue max-w-60 mb-2 ms-7 px-4 rounded-sm group">
+                <img src="./assets/image/svg/graphics.svg" alt="">
+                <span class="text-grey group-hover:text-white">Timeline</span>
+            </div>
+             <div class=" flex items center gap-3 py-3.5 hover:bg-skyBlue max-w-60 mb-2 ms-7 px-4 rounded-sm group">
+                <img src="./assets/image/svg/portfolio.svg" alt="">
+                <span class="text-grey group-hover:text-white">Timeline</span>
+            </div>
+            <div class=" min-h-[500px] flex flex-col justify-end">
+                <div class=" flex items center gap-3 py-3.5 hover:bg-skyBlue max-w-[226px] mb-2 ms-7 px-4 rounded-sm group">
+                <img src="./assets/image/svg/ic-help.svg" alt="">
+                <span class="text-grey group-hover:text-white">Help</span>
+            </div>
+             <div class=" flex items center gap-3 py-3.5 hover:bg-skyBlue max-w-[226px] mb-2 ms-7 px-4 rounded-sm group">
+                <img src="./assets/image/svg/exit svg.svg" alt="">
+                <span class="text-grey group-hover:text-white">Layout</span>
+            </div>
+            </div>
+        </div>
+    <div class="bg-blue w-6/12 px-5">
+      <div class="flex gap-2.5 items-center pt-5">
+        <span class="text-2xl font-medium text-white text-center">Ferrominera Orinoco</span>
+       <span class="py-2 px-4 font-normal text-sm bg-lightBlue text-white rounded-full text-center">Iron producer</span>
+      </div>
+      <div class="flex flex-wrap">
+        <div class="w-full md:w-6/12 lg:w-4/12">
+          <div class="py-5 pl-3 pr-7 bg-lightDarkBlue rounded-xl mt-4 min-h-32 flex flex-col justify-center">
+          <div class="text-2xl font-medium text-skyBlue">
+            Working Capital Loan
+          </div>
+          <span class="font-normal text-sm text-grey">
+            Type of instrument
+          </span>
+          </div>
+        </div>
+         <div class="w-full md:w-6/12 lg:w-4/12 px-4 max-md:px-0">
+          <div class="py-5 pl-3 pr-7 bg-lightDarkBlue rounded-xl mt-4 min-h-32 flex flex-col justify-center">
+          <div class="text-2xl font-medium text-skyBlue">
+           16.00%
+          </div>
+          <span class="font-normal text-sm text-grey">
+            Interest rate
+          </span>
+          </div>
+        </div>
+         <div class="w-full md:w-6/12 lg:w-4/12">
+          <div class="py-5 pl-3 pr-7 bg-lightDarkBlue rounded-xl mt-4 min-h-32 flex flex-col justify-center">
+          <div class="text-2xl font-medium text-skyBlue">
+            $ 5,565,099.00
+          </div>
+          <span class="font-normal text-sm text-grey">
+            Total amount
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class=" bg-lightDarkBlue rounded-xl my-5">
+      <div class="flex items-center justify-between px-5 pt-4">
+        <span class="text-xl font-medium text-white text-center">Timeline</span>
+        <span class="font-normal text-base text-skyBlue">
+          How does it works?
+        </span>
+      </div>
+      <div class="flex items-center justify-between pt-5 pb-2 px-5">
+        <span class="text-sm font-normal  text-grey text-center">01/08/2023</span>
+        <span class="text-sm font-normal  text-grey">
+          30/08/2023
+        </span>
+      </div>
+     <div class=" bg-lightBlue rounded-full h-3 mx-5">
+  <div class="bg-skyBlue h-3 rounded-full flex justify-center items-center" style="width: 40%;">
+  </div>
+    </div>
+     <div class="flex items-center justify-between pt-3 px-5">
+        <span class="text-base font-normal  text-white text-center">$10.00</span>
+        <span class="text-base font-normal  text-white">
+          $5,565,500
+        </span>
+      </div>
+      <div class="flex items-center justify-between pt-1 px-5">
+        <span class="text-sm font-normal  text-grey text-center">Initial public offering</span>
+        <span class="text-sm font-normal  text-grey">
+          Credit performance (DDC)
+        </span>
+      </div>
+      <div class="flex flex-wrap px-5 pb-8">
+        <div class="w-full lg:w-6/12 xl:w-4/12 max-xl:pt-7 pb-7 pt-12">
+        <div class="flex items-center gap-2.5">
+          <div class="">
+            <img class=" px-1.5 py-1.5 bg-skyBlue rounded-lg " src="./assets/image/svg/box-svg-1.svg" alt="">
+          </div>
+          <div class="">
+            <div class="text-white text-sm font-normal">Working Capital Loan</div>
+            <div class="text-grey text-sm font-normal">Type of instrument</div>
+          </div>
+          </div>
+        </div>
+         <div class="w-full lg:w-6/12 xl:w-4/12 max-xl:pt-7 max-lg:pt-0 pb-7 pt-12">
+        <div class="flex items-center gap-2.5">
+          <div class="">
+            <img class=" px-1.5 py-1.5 bg-skyBlue rounded-lg " src="./assets/image/svg/box-svg-2.svg" alt="">
+          </div>
+          <div class="">
+            <div class="text-white text-sm font-normal">Pantera Exchange</div>
+            <div class="text-grey text-sm font-normal">Transmitter</div>
+          </div>
+          </div>
+        </div>
+         <div class="w-full lg:w-6/12 xl:w-4/12 max-xl:pt-0 pb-7 pt-12">
+        <div class="flex items-center gap-2.5">
+          <div class="">
+            <img class=" px-1.5 py-1.5 bg-skyBlue rounded-lg " src="./assets/image/svg/box-svg-3.svg" alt="">
+          </div>
+          <div class="">
+            <div class="text-white text-sm font-normal">Compass Bank</div>
+            <div class="text-grey text-sm font-normal">Settlor entity</div>
+          </div>
+          </div>
+        </div>
+         <div class="w-full lg:w-6/12 xl:w-4/12 pb-7">
+        <div class="flex items-center gap-2.5">
+          <div class="">
+            <img class=" px-1.5 py-1.5 bg-skyBlue rounded-lg " src="./assets/image/svg/box-svg-4.svg" alt="">
+          </div>
+          <div class="">
+            <div class="text-white text-sm font-normal">$ 5565099.00</div>
+            <div class="text-grey text-sm font-normal">Total amount</div>
+          </div>
+          </div>
+        </div>
+         <div class="w-full lg:w-6/12 xl:w-4/12 pb-7">
+        <div class="flex items-center gap-2.5">
+          <div class="">
+            <img class=" px-1.5 py-1.5 bg-skyBlue rounded-lg " src="./assets/image/svg/box-svg-5.svg" alt="">
+          </div>
+          <div class="">
+            <div class="text-white text-sm font-normal">2 months</div>
+            <div class="text-grey text-sm font-normal">Estimated repayment date</div>
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="bg-lightDarkBlue px-5 rounded-xl mb-16">
+        <div class="font-medium text-xl text-white py-4">
+          About company
+        </div>
+        <span class="font-normal text-sm text-white pb-1">
+          Dictum sit lobortis hendrerit morbi leo amet sapien ipsum blandit.
+        </span>
+        <p class="text-grey text-sm font-normal">
+          Arcu fringilla tincidunt mauris ut risus massa ipsum. Metus adipiscing sed leo pharetra sed. Ut nulla libero vel ipsum adipiscing purus posuere. Dui pulvinar id enim tristique habitasse lobortis. Aliquam et et orci ultrices interdum rhoncus arcu mi quis. Arcu fringilla tincidunt mauris ut risus massa ipsum. Metus adipiscing sed leo pharetra sed. Ut nulla libero vel ipsum adipiscing purus posuere. Dui pulvinar id enim tristique habitasse lobortis. Aliquam et et orci ultrices interdum rhoncus arcu mi quis.
+        </p>
+      <div class="flex flex-wrap">
+         <div class="w-full lg:w-6/12 xl:w-4/12 py-4">
+        <div class="flex items-center gap-2.5">
+          <div class="">
+            <img class=" px-1.5 py-1.5 bg-skyBlue rounded-lg " src="./assets/image/svg/box-svg-4.svg" alt="">
+          </div>
+          <div class="">
+            <div class="text-white text-sm font-normal">$ 5565099.00</div>
+            <div class="text-grey text-sm font-normal">Total amount</div>
+          </div>
+          </div>
+        </div>
+         <div class="w-full lg:w-6/12 xl:w-4/12 py-4">
+        <div class="flex items-center gap-2.5">
+          <div class="">
+            <img class=" px-1.5 py-1.5 bg-skyBlue rounded-lg " src="./assets/image/svg/box-svg-5.svg" alt="">
+          </div>
+          <div class="">
+            <div class="text-white text-sm font-normal">2 months</div>
+            <div class="text-grey text-sm font-normal">Estimated repayment date</div>
+          </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="w-3/12">
+     <div class="">
+      <button class="px-7 py-4 bg-lightBlue rounded-lg mt-4 mb-2.5 text-white">Back</button>
+     </div>
+     <div class=" border rounded-xl px-4 pb-5 pt-4 bg-lightDarkBlue border-lightBlue">
+     <div class="box">
+        <div class="flex items-center gap-2.5">
+          <div class="">
+            <img class=" px-1.5 py-1.5 bg-skyBlue rounded-lg " src="./assets/image/svg/help.svg" alt="">
+          </div>
+          <div class="">
+            <div class="text-white text-sm font-normal">Enter Amount to Invest</div>
+            <div class="text-grey text-sm font-normal">Invest</div>
+          </div>
+          </div>
+        </div>
+        <div class="flex justify-between items-center bg-lightBlue py-4 pr-4 pl-8 rounded-xl mt-5" >
+          <span class="text-grey text-sm font-normal">USD</span>
+          <span>
+            <img src="./assets/image/svg/solar_dollar-bold.svg" alt="">
+          </span>
+        </div>
+        <div class="flex justify-between pt-5 pb-2.5">
+          <span class="font-normal text-sm text-white">Net Income</span>
+          <span class="font-bold text-sm text-white">$00.00</span>
+        </div>
+        <div class="w-full min-h-0.5 bg-lightDarkBlue"></div>
+          <div class="flex justify-between pb-2.5 pt-4">
+          <span class="font-normal text-sm text-white">Maximum investment per user</span>
+          <span class="font-bold text-sm text-white">$ 5565099.00</span>
+        </div>
+        <div class="w-full min-h-0.5 bg-lightDarkBlue"></div>
+            <div class="flex justify-between pb-2.5 pt-4">
+          <span class="font-normal text-sm text-white">Your investment in the product</span>
+          <span class="font-bold text-sm text-white">$ 00.00</span>
+        </div>
+        <div class="w-full min-h-0.5 bg-lightDarkBlue"></div>
+        <div class="">
+          <button class="py-4 font-medium text-base flex bg-skyBlue w-full rounded-xl justify-center mt-6 text-white">Invest now</button>
+        </div>
+     </div>
+     <div class=" border px-5 py-4">
+     <div class=" font-medium text-xl text-white pb-4">
+      Company Gallery
+     </div>
+     <div class="show-four">
+     <div>
+      <img class="rounded-md" src="./assets/image/slider img-1.png" alt="">
+     </div>
+     <div>
+      <img class="rounded-md" src="./assets/image/slider img-2.png" alt="">
+     </div>
+     <div>
+      <img class="rounded-md" src="./assets/image/slider img-3.png" alt="">
+     </div>
+     <div>
+      <img class="rounded-md" src="./assets/image/slider img-4.png" alt="">
+     </div>
+      <div>
+      <img  class="rounded-md"src="./assets/image/slider img-1.png" alt="">
+     </div>
+     <div>
+      <img class="rounded-md" src="./assets/image/slider img-2.png" alt="">
+     </div>
+     <div>
+      <img class="rounded-md" src="./assets/image/slider img-3.png" alt="">
+     </div>
+     <div>
+      <img class="rounded-md" src="./assets/image/slider img-4.png" alt="">
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+    </section>
+    <footer class="bg-darkBlue">
+     <div class="flex flex-wrap justify-between">
+      <div class="w-5/12">
+        <div class=" text-grey text-sm font-normal flex justify-end py-6">
+          © Copyright 2021 Pantera | All rights reserved. 
+        </div>
+      </div>
+      <div class="w-4/12">
+        <div class="flex justify-center my-3 gap-4">
+          <span class="px-2.5 py-2.5 border-2 border-skyBlue rounded-full">
+            <img src="./assets/image/svg/facebook.svg" alt="">
+          </span>
+           <span class="px-2.5 py-2.5 border-2 border-skyBlue rounded-full">
+            <img src="./assets/image/svg/instagram.svg" alt="">
+          </span>
+           <span class="px-2.5 py-2.5 border-2 border-skyBlue rounded-full">
+            <img src="./assets/image/svg/twitter.svg" alt="">
+          </span>
+           <span class="px-2.5 py-2.5 border-2 border-skyBlue rounded-full">
+            <img src="./assets/image/svg/linkdin.svg" alt="">
+          </span>
+        </div>
+      </div>
+     </div>
+    </footer>
+</body>
+  <!-- nav-js -->
+    <script>
+      const nav = document.getElementById("mobile_navbar");
+      const toggleButton = document.getElementById("toggle_button");
+      const toggleButtonShowNav = document.querySelector(
+        "#toggle_button .show_nav"
+      );
+      const toggleButtonCloseNav = document.querySelector(
+        "#toggle_button .close_nav"
+      );
+      toggleButton.addEventListener("click", function () {
+        nav.classList.toggle("max-xl:translate-x-full");
+        toggleButtonShowNav.classList.toggle("opacity-0");
+        toggleButtonCloseNav.classList.toggle("opacity-0");
+        console.log("nav");
+      });
+  
+    </script>
+     <!-- slider  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- end  -->
+
+    <!-- first slider -->
+    <script>
+        $('.show-four').slick({
+            dots: true,
+            arrows:false,
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            autoplay:true,
+            autoplaySpeed: 3000,
+
+            responsive: [
+             
+                {
+                    breakpoint: 1300,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 2,
+                        slidesToScroll: 4,
+                    }
+                },
+
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 2,
+                        slidesToScroll: 5,
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        slidesToScroll: 6,
+                    }
+                },
+                {
+                    breakpoint: 940,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        slidesToScroll: 7,
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+
+        });
+    </script>
+</html>
